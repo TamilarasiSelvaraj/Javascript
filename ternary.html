@@ -1,0 +1,132 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input  id="age" value="50">
+        <button onclick="eligibleAge()">Click me!</button>
+        <p id="tag"></p>
+        <h3>Nullish coalescing operator</h3>
+        <p id="name"></p>
+        <p id="nan"></p>
+        <h3>optional chaining operator</h3>
+        <p id="color"></p>
+        <p id="char"></p>
+        <h3>If and else conditions</h3>
+        <p id="clime"></p>
+        <p id="climate"></p>
+        <p id="rain"></p>
+        <p id="hot"></p>
+        <p id="number"></p>
+        <p id="numbers"></p>
+        <p id="hrs"></p>
+        <p id="hour"></p>
+        <p id="hours"></p>
+        <p id="time"></p>
+        <p id="date"></p>
+        <h3>Switch Conditions</h3>
+        <p id="mobile"></p>
+        <script>
+            function eligibleAge(){
+            let rate=30;
+            let price=(rate < 50)? "Maximum 50 Rs":"Minimum 50 Rs";
+            document.getElementById("tag").innerHTML=price+" "+"to order."
+        }
+            //Nullish operator (the first value is represent)Return the first value
+            let name1="Divya";
+            let name2="Rajan";
+            let name3=name1??name2;
+            document.getElementById("name").innerHTML="My Name Is"+" "+name3;
+            //Nullish operator (the first value is null or undefined) Return the second value 
+            let name4=undefined;
+            let name5="Rajan";
+            let name6=name4??name5;
+            document.getElementById("nan").innerHTML="My Name Is"+" "+name6;
+            // optional chaing the value is undefine the output will display undefined
+            let detail={name:"Tamil",age:24,height:157,character:"shorttempered"}
+            let output=detail?.color;
+            let out=detail?.character;
+            document.getElementById("color").innerHTML=output;
+            document.getElementById("char").innerHTML=out;
+            //if or else conditions
+            let weather="hot";
+
+            if(weather=="hot"){
+                document.getElementById("clime").innerHTML= "The weather is hot";
+            }
+            else{
+                document.getElementById("climate").innerHTML="The weather is cold";
+            }
+
+            let cloudy=true;
+            let rainy=true;
+
+            if (cloudy&&rainy){
+                document.getElementById("rain").innerHTML="Today climate is chill so Enjoy your day"
+            }
+            else{
+                document.getElementById("hot").innerHTML="Today climate is hot so Enjoy your day"
+            }
+            let a=25;
+            let b=20;
+            if(a<b){
+                document.getElementById("number").innerHTML= "The first value is lessthan the second value";
+            }
+            else{
+                document.getElementById("numbers").innerHTML= "The first value is greaterthan the second value";
+            }
+
+          //if and else conditions call html element
+           let hour= new Date();
+
+           if (hour >=0 && hour<=13){
+            document.getElementById("hrs").innerHTML="Good Morning";
+           }
+           else if(hour>=13 && hour<=17){
+            document.getElementById("hour").innerHTML="Good Afternoon";
+           }
+           else{
+            document.getElementById("hours").innerHTML="Good Evening";
+           }
+           //if and else conditions stored in variable
+           let time=new Date().getTime();
+
+           if (time<12){
+            calculate="Good Morning";
+           }
+           else if(time > 12){
+            calculate="Good Afternoon";
+           }
+           else{
+            calculate="Good Evening";
+           }
+           document.getElementById("time").innerHTML=calculate;
+
+           let Day =10;
+           if (Day >=10){
+            Days="Working Day";
+           }
+           else{
+            Days="Holiday";
+           }
+           document.getElementById("date").innerHTML=Days
+           
+           let amount="10k";
+
+           switch(amount){
+            case 1:(amount>"10k")
+            Mobile="Buy Android Mobile";
+            break;
+            case 2:(amount>"60k")
+            Mobile="Buy iPhone Mobile";
+            break;
+            case 3:(amount>"5k" && amount<"10k")
+            Mobile="Buy Basic Mobile";
+            break;
+            default:
+            Mobile="You can't afford mobile phone now!";
+           }
+           document.getElementById("mobile").innerHTML=Mobile;
+        </script>
+    </body>
+    </html>
